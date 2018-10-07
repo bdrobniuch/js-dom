@@ -67,9 +67,9 @@ function wyswietl(p) {
 
     p.osoby.forEach((person) => {
         const listItem = document.createElement("li");
-        
-        
-        const parText = document.createTextNode(person.nazwisko + " "+ person.imie);
+
+
+        const parText = document.createTextNode(person.nazwisko + " " + person.imie);
         listItem.appendChild(parText);
         list.appendChild(listItem);
     });
