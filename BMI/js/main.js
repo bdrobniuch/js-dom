@@ -27,7 +27,7 @@ class BMI {
             return "otyłość skrajna";
 
     }
-    
+
 
 }
 
@@ -44,6 +44,26 @@ mniej niż 16 - wygłodzenie
 35 - 39.99 - II stopień otyłości
 powyżej 40 - otyłość skrajna
 */
-let Blazej = new BMI(82, 1.82);
 
-console.log(Blazej.BMIinfo);
+/*Obsluz zdarzenie wyslania formularz. Zablokuj wysylaie formularza i wyswietl w konsoli wartosc pol waga i wzrost*/
+
+let form = document.getElementById("bmi-form");
+let iweight = document.getElementById("weight");
+let iheigth = document.getElementById("heigth");
+let output = document.getElementById("result");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let weight = Number(iweight.value);
+    let heigth = Number(iheigth.value);
+    console.log(weight);
+    console.log(heigth);
+    
+    
+    let kalkulator = new BMI(weight, heigth);
+
+    output.innerText = `Wartosc twojego BMI to ${kalkulator.fBMI} co oznacza ${kalkulator.BMIinfo}`;
+    //        nameAlert.style.display = name.value ? "none" : "block";
+    //        emailAlert.style.display = email.value ? "none" : "block";
+    //        checkerAlert.style.display = checkbox1.checked ? "none" : "block";
+});
